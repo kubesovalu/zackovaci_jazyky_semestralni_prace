@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dokumentace semestrální práce z předmětu Značkovací jazyky</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<header>
+			<h1>Dokumentace semestrální práce z předmětu Značkovací jazyky</h1>
+		</header>
+		
+		<nav id="nav">
+			<h2>Obsah práce</h2>
+			<ul>
+				<li><a href="#nav">				Obsah s odkazy </a></li>
+				<li><a href="#introduction">	Úvod</a></li>
+				<li><a href="#methodology">		Metodika</a></li>
+				<li><a href="#element_desc">	Popis elementů a atributů</a></li>
+				<li><a href="#transform_desc">	Popis transformace</a></li>
+				<li><a href="#summary">			Závěr</a></li>
+				<li><a href="#footer">			Zápatí</a></li>
+			</ul>
+		</nav>
+		
+		<main> 
+			<article>
+				<section id="introduction">
+					<h2>Úvod</h2>
+					<p>
+						Semestrální práce z předmětu Značkovací jazyky se zabývá tvorbou XML dokumentu popisujícího soubor do kterého aplikace ukládá svá nastavení. Součástí je také tvorba XSD schéma, XSL transformace do JSON a tato dokumentace. Dokument byl tvořen jako konfigurační soubor počítačové hry.
+					</p>
+				</section>      
+				
+				<section id="methodology">
+					<h2>Metodika</h2>
+					<p>Všechny dokumenty byly vytvořeny v programu <i>NetBeans IDE 8.2</i>.</p>
+					<p>
+						Nejprve byl vytvořen hrubý XML dokument se jmény elementů a atributů. Ten byl následně konverttován do XSD pomocí webové aplikace <a href="http://www.freeformatter.com/xsd-generator.html">Freeformater</a> v designu Russian Doll (zachovává stejnou strukturu jako zadnaý XML dokument). Tento XSD dokument byl pak ručně doplněn o restrikce na datové typy a také byla upravena celková strktuaa dokumentu do finální podoby. 
+					</p>
+					<p>
+						Finální XML bylo vytvořeno ručně.
+					</p>
+
+					<p>
+						Validita těchto dvou dokumentů byla zkontrolována pomocí <a href="http://www.utilities-online.info/xsdvalidation/">webového validátoru </a>. Zároveň bylo zkontrolováno, že XML dokument odpovídá XSD schématu.
+					</p>
+
+					<p>
+						XSL transformace do JSON byla psána ručně.
+					</p>
+
+					<p>
+						Celý projekt byl nahrán na <a href="https://github.com/rancor1223/znackovaci_jazyky_czu">GitHubu</a>.
+					</p>
+				</section>
+				
+				<section id="element_desc">
+					<h2>Popis elementů a atributů</h2>
+
+					<table border="1">
+						<tr>
+							<th>Adresa elementu/atributu</th>
+							<th>Popis</th>
+						</tr>
+						<tr>
+							<td>settings/game/@name</td>
+							<td>Název hry</td>
+						</tr>
+						<tr>
+							<td>settings/game/@version</td>
+							<td>aktuální verze hry</td>
+						</tr>
+						<tr>
+							<td>settings/game/username</td>
+							<td>Jméno hráče</td>
+						</tr>
+						<tr>
+							<td>settings/game/level</td>
+							<td>Mapa a obtížnost hry</td>
+						</tr>
+						<tr>
+							<td>settings/game/practice/@enabled</td>
+							<td>Zda je možnost procvičovat údery.</td>
+						</tr>
+						<tr>
+							<td>settings/game/ball_color/@red</td>
+							<td>množství čevené v barvě míčku</td>
+						</tr>
+						<tr>
+							<td>settings/game/ball_color/@green</td>
+							<td>množství zelené v barvě míčku</td>
+						</tr>
+						<tr>
+							<td>settings/game/ball_color/@blue</td>
+							<td>množství modré v barvě míčku</td>
+						</tr>
+						<tr>
+							<td>settings/game/language</td>
+							<td>Jazyk hry</td>
+                                                </tr>
+						<tr>
+							<td>settings/multiplayer/@port</td>
+							<td>Port pro komunikaci se MP serverem</td>
+						</tr>
+						<tr>
+							<td>settings/multiplayer/chat/@enabled</td>
+							<td>Zapnutí/vypnutí chatu</td>
+						</tr>
+						<tr>
+							<td>settings/multiplayer/server</td>
+							<td>Centrální server</td>
+						</tr>
+						<tr>
+							<td>settings/multiplayer/maxping</td>
+							<td>Maximální povolená odezva</td>
+						</tr>
+                                                <tr>
+                                                    <td>settings/multiplayer/maxuser</td>
+                                                    <td>Maximální počet uživatelů</td>
+                                                </tr>
+						<tr>
+							<td>settings/video_options/resolution</td>
+							<td>Výběr rozlišení</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/fullscreen/@enabled</td>
+							<td>zda je hra ve fullsreenu</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/quality</td>
+							<td>Nastavení kvality zobrazování</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/brightness</td>
+							<td>Nastavení jasu</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/contrast</td>
+							<td>Nastavení kontrastu</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/saturation</td>
+							<td>Nastavení saturacce</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/FPS</td>
+							<td>počet obrázků za sekundu</td>
+						</tr>
+						<tr>
+							<td>settings/video_potions/display</td>
+							<td>na kterém displeji se hra zobrazuje</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/lock_framerate/@enabled</td>
+							<td>Zda je FPS umaknuté či ne</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/field_of_view</td>
+							<td>Pole pozorování</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/draw_distance</td>
+							<td>Vzdálenost vykreslování</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/shadow_distance</td>
+							<td>vzdálenost od stínu</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/shadow_resolution</td>
+							<td>rozlišení stínů</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/shadow_cascades/@enabled</td>
+							<td>zda jsou zapnuté kaskadové stíny</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/texture_quality</td>
+							<td>kvalita textury</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/anti-aliasing</td>
+							<td>Vyhlazování hran</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/v-sync</td>
+							<td>v-sync</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/lightning flicker/@enabled</td>
+							<td>Zapnutí/vypnutí blikání světla</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/ambient_occlusion/@enabled</td>
+							<td>Zapnutí/vypnutí absorbování</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/foliage_distance</td>
+							<td>vzdálenost olistění</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/ball_lights/@enabled</td>
+							<td>rozvícení míčku</td>
+						</tr>
+						<tr>
+							<td>settings/video_options/level_of_detail</td>
+							<td>rozlišení detailu</td>
+						</tr>
+						<tr>
+							<td>settings/audio_options/master</td>
+							<td>Hlavní nastavení zvuku</td>
+						</tr>
+						<tr>
+							<td>settings/audio_options/music</td>
+							<td>Nastavení muziky</td>
+						</tr>
+						<tr>
+							<td>settings/audio_options/noise</td>
+							<td>Nastavení zvuků hry</td>
+						</tr>
+						<tr>
+							<td>settings/control_options/input</td>
+							<td>čím se ovládá hra</td>
+						</tr>
+						<tr>
+							<td>settings/control_options/sensitivity</td>
+							<td>Hladina citlivosti ovládání</td>
+						</tr>
+                                                <tr>
+							<td>settings/control_options/inverted_mouse/@horizontal</td>
+							<td>Zapnutí/vypnutí horizontálního otočení ovládání</td>
+						</tr>
+						<tr>
+							<td>settings/control_options/inverted_mouse/@vertical</td>
+							<td>Zapnutí/vypnutí vertikálního otočení ovládání</td>
+						</tr>
+						<tr>
+							<td>settings/control_options/shoot</td>
+							<td>střílení holí</td>
+						</tr>
+						<tr>
+							<td>settings/control_options/reset</td>
+							<td>znovuobjevení se na začátku</td>
+						</tr>
+						<tr>
+							<td>settings/control_options/jump</td>
+							<td>skákání míčku</td>
+						</tr>
+						<tr>
+							<td>settings/control_options/chatting</td>
+							<td>zapnutí chatu</td>
+						</tr>
+						<tr>
+							<td>settings/control_options/light</td>
+							<td>rozsvícení míčku</td>
+						</tr>
+						<tr>
+							<td>settings/control_options/leaderboard</td>
+							<td>zobrazení tabulky hráčů</td>
+						</tr>
+					</table>
+				</section>
+				
+				<section id="transformation_desc">
+					<h2>Popis transformace</h2>
+
+					<h3>JSON</h3>
+					<p>
+						Data jsou transformována do JSON dokumentu. Jsou strukturována stejně jako výchozí XML soubor. Elementy s datovým typem <i>string</i> jsou zapsány v úvozovkách. Číselné datové typy a <i>boolean</i> jsou zapsnány bez úvozovek.
+					</p>
+				</section>
+				
+				<section id="summary">
+					<h2>Závěr</h2>
+					<p>
+						Jazyk XML je používán pro strukturované ukládání dat nebo při komunikaci mezi programy. Jeho výhodou je dobrá čitelnost a šikoké možnosti filtrování a omezování dat a datovýh typů. Práce s ním je také snadná, protože k jeho editaci stačí pouze textový editor.
+					</p>
+				</section>
+			</article>
+		</main>
+		
+		<footer id="footer">
+			<hr>
+			<table>
+				<tr>
+					<td>Autor:</td>
+					<td>Ludmila Kubešová</td>
+				</tr>
+				<tr>
+					<td>Cvičení:</td>
+					<td>Pondělí 14:00 Sudý</td>
+				</tr>
+			</table>
+		</footer>
+	</body>
+</html>

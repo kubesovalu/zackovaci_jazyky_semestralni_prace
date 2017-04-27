@@ -1,0 +1,80 @@
+
+        {
+        
+            "settings": {
+            
+                "game": {
+                        "-name": "Golf with your friends",
+                        "-version": "1.99.1",
+                        "username": "nevimnevim",
+                        "level": "forest",
+                        "mode": "classic",
+                        "practice -enabled": ,
+                        "ball_color":
+                            "-red": 22,
+                            "-green": 0,
+                            "-blue": 44,
+                        "language": "english"
+                        }
+                                     
+            ,
+            
+                "multiplayer": {
+                        "-port": 8000,
+                        "chat -enabled": true,
+                        "server": "europe",
+                        "maxping": 120,
+                        "maxuser": 8
+                }
+            ,
+            
+                "video_options": {
+                        "resolution": "1366x768",
+                        "fullscreen -enabled": true,
+                        "quality": "medium",
+                        "brightness": 33,
+                        "contrast": ,
+                        "saturation": 40,
+                        "FPS": 30,
+                        "display": "display 1",
+                        "lock_framerate -enabled": ,
+                        "field_of_view": 45,
+                        "draw_distance": 12,
+                        "shadow_distance": 15,
+                        "shadow_resolution": "",
+                        "shadow_cascades -enabled": false,
+                        "texture_quality": "",
+                        "anti-aliasing": "2x multi sampling",
+                        "v-sync -enabled": true,
+                        "lightning_flicker -enabled": false,
+                        "ambient_occlusion -enabled": false,
+                        "foliage_distance": 45,
+                        "ball_lights -enabled": true
+                       }
+            ,
+            
+                "audio_options": {
+                        "master": 20,
+                        "music": 60,
+                        "noise": 20
+                }
+            ,
+            
+                "control_options": {
+                        "input": "Keyboard and Mouse",
+                        "sensitivity": 33,
+                        "inverted_mouse":
+                            "horizontal": "false",
+                            "vertical": "false",
+                        "shoot": "mouse",
+                        "reset": "R",
+                        "jump": "space",
+                        "chatting": "T",
+                        "light": "L",
+                        "leaderboard": "TAB"
+                        }
+            
+            }
+        
+        }
+    

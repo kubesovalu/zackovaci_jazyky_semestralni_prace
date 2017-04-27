@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <game name="Golf with your friends" version="1.99.1">
+        <username>nevimnevim</username>
+        <level>forest</level>
+        <mode>classic</mode>
+        <practice enabled="true" />
+        <ball_color red="22" green= "0" blue="44"></ball_color>
+        <language>english</language>
+    </game>
+    <multiplayer port="8000">
+        <chat enabled="true" />
+        <server>europe</server>
+        <maxping>120</maxping>
+        <maxuser>8</maxuser>
+    </multiplayer>
+    <video_options>
+        <resolution>1366x768</resolution>
+        <fullscreen enabled="true" />
+        <quality>medium</quality>
+        <brightness>33</brightness>
+        <constrast>10</constrast>
+        <saturation>40</saturation>
+        <FPS>30</FPS>
+        <display>display 1</display>
+        <lock_framerate enabled="false" />
+        <field_of_view>45</field_of_view>
+        <draw_distance>12</draw_distance>
+        <shadow_distance>15</shadow_distance>
+        <shadow_resolution>medium</shadow_resolution>
+        <shadow_cascades enabled="false" />
+        <texture_quality>low</texture_quality>
+        <anti-aliasing>2x multi sampling</anti-aliasing>
+        <v-sync enabled="true" />
+        <lightning_flicker enabled="false" />
+        <ambient_occlusion enabled="false" />
+        <foliage_distance>45</foliage_distance>
+        <ball_lights enabled="true" />
+        <level_of_detail>20</level_of_detail>
+    </video_options>
+    <audio_options>
+        <master>20</master>
+        <music>60</music>
+        <noise>20</noise>
+    </audio_options>
+    <control_options>
+        <input>Keyboard and Mouse</input>
+        <sensitivity>33</sensitivity>
+	<inverted_mouse horizontal="false" vertical="false" />
+        <shoot>mouse</shoot>
+        <reset>R</reset>
+        <jump>space</jump>
+        <chatting>T</chatting>
+        <light>L</light>
+        <leaderboard>TAB</leaderboard>
+    </control_options>
+</settings>

@@ -1,0 +1,357 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <xs:element name="settings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="game">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="username">
+                  <xs:simpleType>
+			<xs:restriction base="xs:string">
+                            <xs:pattern value="[a-zA-Z0-9]{0,16}"/>
+			</xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+              <xs:element name="level">
+              <xs:simpleType>
+		<xs:restriction base="xs:string">
+                    <xs:enumeration value="forest"/>
+                    <xs:enumeration value="oasis"/>
+                    <xs:enumeration value="candyland"/>
+                    <xs:enumeration value="twilight"/>
+		</xs:restriction>
+            </xs:simpleType>
+            </xs:element>
+              <xs:element name="mode">
+                  <xs:simpleType>
+		<xs:restriction base="xs:string">
+                    <xs:enumeration value="classic"/>
+                    <xs:enumeration value="custom"/>
+                </xs:restriction>
+            </xs:simpleType>
+            </xs:element>
+              <xs:element name="practice">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:boolean" name="enabled"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ball_color">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:byte" name="red"/>
+                      <xs:attribute type="xs:byte" name="green"/>
+                      <xs:attribute type="xs:byte" name="blue"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="language"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name"/>
+            <xs:attribute type="xs:string" name="version"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="multiplayer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="chat">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:boolean" name="enabled"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="server">
+                  <xs:simpleType>
+		<xs:restriction base="xs:string">
+                    <xs:enumeration value="europe"/>
+                    <xs:enumeration value="america"/>
+                    <xs:enumeration value="asia"/>
+                    <xs:enumeration value="australia"/>
+		</xs:restriction>
+            </xs:simpleType>
+            </xs:element>
+              <xs:element name="maxping">
+              <xs:simpleType>
+		<xs:restriction base="xs:nonNegativeInteger">
+                    <xs:enumeration value="50"/>
+                    <xs:enumeration value="100"/>
+                    <xs:enumeration value="120"/>
+                    <xs:enumeration value="150"/>
+		</xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+              <xs:element name="maxuser">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="8"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="port">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="65535"/>
+                    </xs:restriction>
+		</xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="video_options">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="resolution">
+                  <xs:simpleType>
+		<xs:restriction base="xs:string">
+                    <xs:enumeration value="1366x768"/>
+                    <xs:enumeration value="640x480"/>
+                    <xs:enumeration value="1290x1080"/>
+                    <xs:enumeration value="200x300"/>
+		</xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+              <xs:element name="fullscreen">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:boolean" name="enabled"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="quality">
+                    <xs:simpleType>
+		<xs:restriction base="xs:string">
+                    <xs:enumeration value="low"/>
+                    <xs:enumeration value="medium"/>
+                    <xs:enumeration value="high"/>
+                    <xs:enumeration value="very high"/>
+		</xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="brightness">
+                  <xs:simpleType>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+                  </xs:simpleType>
+              </xs:element>
+              <xs:element name="constrast">
+              <xs:simpleType>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+                  </xs:simpleType>
+              </xs:element>
+              <xs:element name="saturation">
+                  <xs:simpleType>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+                  </xs:simpleType>
+              </xs:element>
+              <xs:element name="FPS">
+              <xs:simpleType>
+		<xs:restriction base="xs:byte">
+                    <xs:enumeration value="20"/>
+                    <xs:enumeration value="25"/>
+                    <xs:enumeration value="30"/>
+                    <xs:enumeration value="60"/>
+		</xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element type="xs:string" name="display"/>
+              <xs:element name="lock_framerate">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:boolean" name="enabled"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="field_of_view">
+                  <xs:simpleType>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+                  </xs:simpleType>
+              </xs:element>
+              <xs:element name="draw_distance">
+                  <xs:simpleType>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+                  </xs:simpleType>
+              </xs:element>
+              <xs:element name="shadow_distance">
+                  <xs:simpleType>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+                  </xs:simpleType>
+              </xs:element>
+              <xs:element name="shadow_resolution">
+                 <xs:simpleType>
+		<xs:restriction base="xs:string">
+                    <xs:enumeration value="low"/>
+                    <xs:enumeration value="medium"/>
+                    <xs:enumeration value="high"/>
+                    <xs:enumeration value="very high"/>
+		</xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="shadow_cascades">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:boolean" name="enabled"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="texture_quality">
+                 <xs:simpleType>
+		<xs:restriction base="xs:string">
+                    <xs:enumeration value="low"/>
+                    <xs:enumeration value="medium"/>
+                    <xs:enumeration value="high"/>
+                    <xs:enumeration value="very high"/>
+		</xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element type="xs:string" name="anti-aliasing"/>
+              <xs:element name="v-sync">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:boolean" name="enabled"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="lightning_flicker">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:boolean" name="enabled"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ambient_occlusion">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:boolean" name="enabled"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="foliage_distance">
+              <xs:simpleType>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+                  </xs:simpleType>
+              </xs:element>
+              <xs:element name="ball_lights">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:boolean" name="enabled"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="level_of_detail">
+                  <xs:simpleType>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+                  </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="audio_options">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="master">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="100"/>
+                    </xs:restriction>
+		</xs:simpleType>
+              </xs:element>
+              <xs:element name="music">
+              <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="100"/>
+                    </xs:restriction>
+		</xs:simpleType>
+              </xs:element>
+              <xs:element name="noise">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="100"/>
+                    </xs:restriction>
+		</xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="control_options">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="input"/>
+              <xs:element  name="sensitivity">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="65535"/>
+                    </xs:restriction>
+		</xs:simpleType>
+              </xs:element>
+              <xs:element name="inverted_mouse">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="horizontal"/>
+                      <xs:attribute type="xs:string" name="vertical"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="shoot"/>
+              <xs:element type="xs:string" name="reset"/>
+              <xs:element type="xs:string" name="jump"/>
+              <xs:element type="xs:string" name="chatting"/>
+              <xs:element type="xs:string" name="light"/>
+              <xs:element type="xs:string" name="leaderboard"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
